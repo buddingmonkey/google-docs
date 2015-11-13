@@ -171,6 +171,14 @@ function ImportJSONAdvanced(url, fetchOptions, query, parseOptions, includeFunc,
   return parseJSONObject_(object, query, parseOptions, includeFunc, transformFunc);
 }
 
+/**
+ * Decodes JSON via a string
+ */
+function ImportJSONString(jsonString, query, parseOptions) {
+  var object = JSON.parse(jsonString);
+  return parseJSONObject_(object, query, parseOptions, includeXPath_, defaultTransform_);
+}
+
 /** 
  * Encodes the given value to use within a URL.
  *
